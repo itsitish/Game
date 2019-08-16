@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>First Page</title>
+</head>
+<body style="background-image: linear-gradient(30deg, red,black)">
+<h1 style="color:white;text-align:center; font-family:verdana">Register</h1>
+<form style="text-align:center; color:white;font-family:Arial">
+User name:<br>
+<input type="text" pattern="[A-Za-z]{7,}" name="user"><br><br>
+Password:<br><input type="password" id="pass2" 
+pattern="(?=.*\d)(?=.*[a-zA-z])(?=.*['@', '!', '#', '$', '&', '*', '^', '%']).{6,13}" name="psw">
+<br>
+<br>
+Re enter Password:<br>
+<input type="password" id="pass1" name="rpsw">
+<br><br>
+<input type="submit" onclick="myfunction()" value="Register" style="padding:10px; cursor:pointer;">
+</form>
+<script>
+function myfunction(){
+var a=document.getElementById("pass1").value;
+var b=document.getElementById("pass2").value;
+if(a==b)
+{
+alert("Match");
+var user1=document.getElementById("user").value;
+var psw1=document.getElementById("psw").value;
+if(typeof(Strorage)!=="undefined"){
+localStorage.setItem(user1,psw1);}
+
+}
+else
+{
+alert("No match");
+}
+}
+</script>
+<br>
+<hr>
+<br>
+<br>
+<a href="C:\Users\IT20099180\Desktop\Game\Login Page.html">
+<button style="padding:10px; margin:auto; display:block ; cursor:pointer; font-family:Arial">Login</button>
+</a>
+</body>
+</html>
