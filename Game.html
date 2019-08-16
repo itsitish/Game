@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Main Game</title>
+</head>
+<body style="background-image: linear-gradient(45deg, black, red, black, red);color:white;">
+<h1 style="text-align:center;">Math Game</h1>
+<p style="text-align:right;font-size:20px;color:black;">User:
+<p style="margin: 0; display: inline;font-size:20px;">Level :</p><p style=" margin: 2; display: inline;" id="a">
+<p style="text-align:right;font-size:20px;color:black;">Score:</p><p style="text-align:right;" id="s"><hr>
+<br>
+<h3 style="display:inline">Question :</h3>
+<p style="display:inline" id="a1"><p style="margin:2; display:inline" id="o">
+<p style="display:inline" id="b1"></p><p style="margin:2; display:inline">?</p><br><br>
+<input type="radio" name="one" id="1"><p style="margin:0; display:inline" id="w"></p><br><br>
+<input type="radio" name="one" id="2"><p style="margin:0; display:inline" id="x"></p><br><br>
+<input type="radio" name="one" id="3"><p style="margin:0; display:inline" id="y"></p><br><br>
+<input type="radio" name="one" id="4"><p style="margin:0; display:inline" id="z"></p><br><br>
+<button style="padding:8; font-family:verdana" onclick="check()" >Submit</button>
+<p id="bb"></p>
+<script type="text/javascript">
+var ops=['*','/','+','-'];
+var i=0;
+var s=0;
+document.getElementById("a").innerHTML = i;
+document.getElementById("s").innerHTML = s;
+var num1=Math.floor(Math.random() * 20)+1;
+document.getElementById("a1").innerHTML = num1;
+var num2=Math.floor(Math.random() * 20)+1;
+document.getElementById("b1").innerHTML = num2;
+var rin=Math.floor(Math.random()*4);
+document.getElementById("o").innerHTML =ops[rin];
+var w1=num1*num2;
+document.getElementById("w").innerHTML =w1;
+var x1=Math.floor(num1/num2);
+document.getElementById("x").innerHTML =x1;
+var y1=num1+num2;
+document.getElementById("y").innerHTML =y1;
+var z1=num1-num2;
+document.getElementById("z").innerHTML =z1;
+
+
+</script>
+</body>
+</html>
