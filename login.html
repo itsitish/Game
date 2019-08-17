@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body style="background-image: linear-gradient(90deg, black, red)">
+    <h1 style="text-align:center; font-family:verdana">Login</h1>
+
+    <div style="text-align:center; margin:auto; display:block;font-family:Arial">
+        <form action="">
+            <input type="text" id="lname" pattern="[A-Za-z]{7,}" placeholder="User name"><br><br>
+            <input type="password" pattern="(?=.*\d)(?=.*[a-zA-z])(?=.*['@', '!', '#', '$', '&', '*', '^', '%']).{6,13}" id="lpassword" placeholder="Password"><br><br>
+            <button type="button" style="padding:10px; cursor:pointer;" onclick="login();">Login</button>
+            <p id="msg"></p><hr>
+        </form>
+        <button style="padding:10px; cursor:pointer;"><a style="color: black" href="index.html">Register</a></button>
+    </div>
+    <script>
+        let lname = document.getElementById("lname");
+        let lpass = document.getElementById("lpassword");
+        function login(){
+            let user = localStorage.getItem("username");
+            let pass = localStorage.getItem("password");
+
+            let msg = document.getElementById("msg");     
+            if(user == lname.value && pass == lpass.value){
+                msg.innerHTML = "Login success";
+                window.open("Game Preview.html")
+            }
+            else{
+                msg.innerHTML = "Login fail";
+            }
+        }
+
+    </script>
+</body>
+</html>
