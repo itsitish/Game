@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  vertical-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: red;
+  color: white;
+  size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#container {
+  
+  border-radius: 25px;
+  border: 2px solid blue;
+  padding: 20px; 
+  width: 500px;
+  height: 500px;  
+  background-color: gray;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+<h2 style="text-align: center;">Login Form</h2><br><hr>
+
+<form >
+ 
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" style="border-radius:15px" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" style="border-radius:15px" required><br><br><br>
+        
+    <button style="width: 200px; height: 50px; border-radius:15px" type="submit"  onclick="login()">Login</button>
+  
+
+ 
+  
+</form>
+</div>
+            <p id="msg"></p>
+<script>
+        let user1 = document.getElementById("uname");
+        let pass1 = document.getElementById("psw");
+        function login(){
+            let user = localStorage.getItem("username");
+            let pass = localStorage.getItem("password");
+
+            let msg = document.getElementById("msg");     
+            if(user == user1.value && pass == pass1.value){
+                msg.innerHTML = "Login success";
+            }
+            else{
+                msg.innerHTML = "Login fail";
+            }
+        }
+
+    </script>
+
+
+
+</body>
+</html>
+
