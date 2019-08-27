@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body style="background-image: linear-gradient(90deg, red,black)">
+    <h1 style="color:white;text-align:center; font-family:verdana">Register</h1>
+
+    <form style="text-align:center; color:white;font-family:Arial">
+        <input type="text" id="rname" pattern="[A-Za-z]{7,}" placeholder="Username" required><br><br>
+        <input type="password" id="rpassword" pattern="(?=.*\d)(?=.*[a-zA-z])(?=.*['@', '!', '#', '$', '&', '*', '^', '%']).{6,13}" placeholder="Password" required><br><br>
+        <input type="password"  onkeyup="enableb()" id="rpass1" pattern="(?=.*\d)(?=.*[a-zA-z])(?=.*['@', '!', '#', '$', '&', '*', '^', '%']).{6,13}" placeholder="Re-enter" required><br><br>
+        
+        <button style=" padding: 10px" type="button" id="g" onclick="register() " disabled="disabled" >Register</button>
+        <p id='a'></p>
+        <hr>
+
+        <button style=" padding: 10px"><a style="color: black" href="login.html" target="_self">Login Now</a></button>
+        
+    </form>
+
+    <script>
+
+    
+    function enableb(){
+            let rname = document.getElementById("rname").value;
+            let rpass = document.getElementById("rpassword").value; 
+    let rpass1 = document.getElementById("rpass1").value;
+    if(rpass1==rpass && rpass.length>5 && rname.length>6)
+    {
+
+       document.getElementById("g").disabled=false;
+
+    }
+    else{
+               document.getElementById("g").disabled=true;
+
+    }
+    }
+        function register(){   
+    let rname = document.getElementById("rname").value;
+    let rpass = document.getElementById("rpassword").value; 
+    let rpass1 = document.getElementById("rpass1").value;
+            let msg=document.getElementById("a");
+            if(rpass==rpass1)
+            {   
+            localStorage.setItem("username",rname);
+            localStorage.setItem("password",rpass); 
+            window.open("login.html","_self");            
+            }   
+            else{
+                msg.innerHTML="Registration not successfull";
+
+            }       
+        }
+    </script>
+    
+</body>
+</html>

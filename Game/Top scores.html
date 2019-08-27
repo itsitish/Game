@@ -1,0 +1,40 @@
+<html><head>
+<title>
+Top Scores
+</title>
+</head><body style="background-image: linear-gradient(360deg,black,red);">
+<button style="text-align: center;padding: 10px;width: 70;cursor: pointer;"><a style="color: black" href="Game.html">
+Start<a/>
+</button>
+<p id="a2" style="text-align:right;font-size:20px;color:black;"></p>
+<h1 style="font-family:Arial; text-align:center">Math Game</h1><h2 style="font-family:Arial; text-align:center">Top scores</h2>
+
+<table style="text-align: center; color: white; width:100%">
+<tr>
+<th>Name</th>
+<th>Score</th>
+</tr>
+
+<tr><td>Abc</td><td id="ab"></td></tr>
+<tr><td>Cbd</td><td id="ac"></td></tr>
+<tr><td>Sbc</td><td id="ad"></td></tr>
+<tr><td>Xbc</td><td id="ae"></td></tr>
+<tr><td>Ybc</td><td id="af"></td></tr>
+</table>
+
+<script>
+let score = localStorage.getItem("score");
+document.getElementById("ab").innerHTML=score;
+let score1 = localStorage.getItem("score1");
+document.getElementById("ac").innerHTML=score1;
+let score2 = localStorage.getItem("score2");
+document.getElementById("ad").innerHTML=score2;
+let score3 = localStorage.getItem("score3");
+document.getElementById("ae").innerHTML=score3;
+let score4 = localStorage.getItem("score4");
+document.getElementById("af").innerHTML=score4;
+let a2 = localStorage.getItem("username");
+document.getElementById("a2").innerHTML=a2;
+</script>
+
+</h1></body></html>
